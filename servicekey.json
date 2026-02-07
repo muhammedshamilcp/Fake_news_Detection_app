@@ -1,0 +1,78 @@
+{
+  "app": {
+    "name": "Fake News Detector",
+    "version": "1.0.0",
+    "description": "Educational rule-based fake news scanner",
+    "year": 2025,
+    "author": "Your Name",
+    "icon": "🛡️"
+  },
+
+  "ui": {
+    "title": "Fake News Detector",
+    "subtitle": "Rule-based misinformation scanner • Educational tool",
+    "sidebar_title": "🛡️ Fake News Scanner",
+    "analyze_button_text": "🔍 Analyze Article",
+    "clear_button_text": "Clear",
+    "feedback_question": "Was this analysis accurate?"
+  },
+
+  "detection": {
+    "thresholds": {
+      "fake": 68,
+      "suspicious": 42
+    },
+    "clickbait_patterns": [
+      "breaking.*exclusive",
+      "you won'?t believe",
+      "shocking.*revealed",
+      "they don'?t want you to know",
+      "doctors hate",
+      "click.*here",
+      "limited time",
+      "secret.*government",
+      "hidden truth",
+      "must (see|watch)",
+      "viral.*video",
+      "miracle.*cure"
+    ],
+    "emotional_words": [
+      "amazing", "horrible", "terrible", "unbelievable", "shocking",
+      "outrageous", "fantastic", "miracle", "deadly", "urgent", "alert"
+    ],
+    "credible_sources": [
+      "reuters", "bbc", "ap ", "npr", "wall street journal", "new york times"
+    ],
+    "min_suspicious_patterns": 3,
+    "min_emotional_words": 5,
+    "min_exclamations": 5,
+    "min_all_caps_words": 3,
+    "min_word_count_for_deduction": 220
+  },
+
+  "samples": [
+    {
+      "id": 1,
+      "name": "Clickbait Example",
+      "title": "BREAKING: Miracle Cure Discovered – Big Pharma Panicking!",
+      "content": "A revolutionary natural cure heals everything in days! Doctors hate this trick. Click now before it's banned!"
+    },
+    {
+      "id": 2,
+      "name": "Credible Example",
+      "title": "New mRNA Cancer Therapy Shows Strong Early Results",
+      "content": "According to Reuters and Nature Medicine, a phase II trial of a novel mRNA-based therapy demonstrated promising tumor reduction in 62% of participants..."
+    },
+    {
+      "id": 3,
+      "name": "Conspiracy Example",
+      "title": "GOVERNMENT CONFIRMS ALIENS – SHOCKING AREA 51 FOOTAGE!!!",
+      "content": "Leaked documents PROVE aliens are real! You won't believe what they found!!! Watch before they delete this video!!!"
+    }
+  ],
+
+  "about": {
+    "title": "About this Tool",
+    "content": "This is an educational rule-based fake news indicator (not a trained ML model).\n\nWhat it looks for:\n- Clickbait & sensational phrases\n- Overuse of emotional/outrage language\n- Excessive exclamation marks & ALL CAPS\n- Absence of credible source mentions\n- Very short or suspiciously long articles\n\nImportant limitations:\n- Can produce false positives and false negatives\n- Should not be used as the only source of truth\n- Always cross-check with established fact-checking websites\n\nBuilt with Streamlit • Mock storage • For learning & demonstration purposes only."
+  }
+}
